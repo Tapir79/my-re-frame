@@ -1,4 +1,5 @@
 (ns my-re-frame.db)
 
 (def default-db
-  {:name "re-frame"})
+  {:name "re-frame"
+   :test "Testidb"})
