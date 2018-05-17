@@ -1,6 +1,7 @@
 (ns my-re-frame.views
   (:require [re-frame.core :as re-frame]
             [my-re-frame.subs :as subs]
+            [my-re-frame.events :as events]
             ))
 
 (defn main-panel []
@@ -9,4 +10,8 @@
     [:div
      [:p "Testi " @test]
      [:p "Hello from " @name]
+     [:button {
+               :on-click #(re-frame/dispatch [::events/name-change "Testi2"])
+               } "Change name"]
       ]))
+

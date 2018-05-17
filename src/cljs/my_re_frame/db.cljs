@@ -2,4 +2,5 @@
 
 (def default-db
   {:name "re-frame"
-   :test "Testidb"})
+   :test "Testidb"
+   })
