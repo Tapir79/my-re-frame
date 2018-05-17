@@ -11,9 +11,9 @@ events.cljs = write and register event handler functions
 db -> ``state {:name "a" :test "b"}         ``           
 subs -> ``reg-sub :name            
         reg-sub :test ``            
-views -> ``subscribe A [::subs/name]            
-         subscribe B [::subs/test]              
-         [:div "Hello " @A @B]        ``            
+views ->   ``subscribe A [::subs/name]``                     
+           ``subscribe B [::subs/test]``               
+           ``[:div "Hello " @A @B]        ``            
                           
 Produces: ```
           Hello AB   
