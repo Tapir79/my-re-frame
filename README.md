@@ -10,19 +10,18 @@ events.cljs = write and register event handler functions
 
 #Subscribing           
 
-| cljs file  | code |
+| cljs     | code     |
 | ------------- | ------------- |
-| db  | ``state {:name "a" :test "b"} `` |
-| subs | ``reg-sub :name   ``   ``  reg-sub :test ``  |
-| views| ``subscribe A [::subs/name]`` ``subscribe B [::subs/test]`` ``[:div "Hello " @A @B] ``|
+|  db           | ``state {:name "a" :test "b"} `` |
+|  subs         | ``reg-sub :name   ``   ``  reg-sub :test ``  |
+|  views        | ``subscribe A [::subs/name]`` ``subscribe B [::subs/test]`` ``[:div "Hello " @A @B] ``|
                                     
-Produces: ```
-          Hello ab   
-          `
-          ``        
+Produces: ``Hello ab``  
+           
+                  
 #Dispatching
   
-| cljs file  | code |
+| cljs | code |
 | ------------- | ------------- |
 | views  | ``:on-click #(re-frame/dispatch [::events/name-change "Name changed!"])``|
 | events  | ``(re-frame/reg-event-db `` ``::name-change`` |
