@@ -12,15 +12,15 @@ db -> ``state {:name "a" :test "b"}         ``
 subs -> ``reg-sub :name            
         reg-sub :test ``            
 views ->   ``subscribe A [::subs/name]``                     
-           ``subscribe B [::subs/test]``               
-           ``[:div "Hello " @A @B]        ``            
+       -   ``subscribe B [::subs/test]``               
+       -   ``[:div "Hello " @A @B]        ``            
                           
 Produces: ```
           Hello ab   
           ```         
 views -> ``:on-click #(re-frame/dispatch [::events/name-change "Name changed!"])``         
 events ->   ``(re-frame/reg-event-db ``           
-            ``::name-change`      ``           
+       -    ``::name-change`      ``           
 db -> ``state {:name "Name changed!" :test "b"} ``                       
             
 ## Development Mode
