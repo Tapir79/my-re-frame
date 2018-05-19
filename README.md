@@ -18,12 +18,9 @@ views ->   ``subscribe A [::subs/name]``
 Produces: ```
           Hello ab   
           ```         
-
 views -> ``:on-click #(re-frame/dispatch [::events/name-change "Name changed!"])``         
-
-events -> ``(re-frame/reg-event-db ``           
-            ``  ::name-change`      ``           
-
+events ->   ``(re-frame/reg-event-db ``           
+            ``::name-change`      ``           
 db -> ``state {:name "Name changed!" :test "b"} ``                       
             
 ## Development Mode
