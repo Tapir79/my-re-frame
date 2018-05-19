@@ -6,22 +6,28 @@ Re-frame is just a way to standardize the project structure.
 db.cljs = design the app state i.e. data structure         
 subs.cljs = the query layer. Write and register subscription functions              
 views.cljs = Write Reagent component functions             
-events.cljs = write and register event handler functions               
+events.cljs = write and register event handler functions    
 
-db -> ``state {:name "a" :test "b"}         ``           
-subs -> ``reg-sub :name            
-        reg-sub :test ``            
-views ->   ``subscribe A [::subs/name]``                     
-       -   ``subscribe B [::subs/test]``               
-       -   ``[:div "Hello " @A @B]        ``            
-                          
+#Subscribing           
+
+| cljs file  | code |
+| ------------- | ------------- |
+| db  | ``state {:name "a" :test "b"} `` |
+| subs | ``reg-sub :name   ``   ``  reg-sub :test ``  |
+| views| ``subscribe A [::subs/name]`` ``subscribe B [::subs/test]`` ``[:div "Hello " @A @B] ``|
+                                    
 Produces: ```
           Hello ab   
-          ```         
-views -> ``:on-click #(re-frame/dispatch [::events/name-change "Name changed!"])``         
-events ->   ``(re-frame/reg-event-db ``           
-       -    ``::name-change`      ``           
-db -> ``state {:name "Name changed!" :test "b"} ``                       
+          `
+          ``        
+#Dispatching
+  
+| cljs file  | code |
+| ------------- | ------------- |
+| views  | ``:on-click #(re-frame/dispatch [::events/name-change "Name changed!"])``|
+| events  | ``(re-frame/reg-event-db `` ``::name-change`` |
+| db  | ``state {:name "Name changed!" :test "b"} ``|           
+                     
             
 ## Development Mode
 
