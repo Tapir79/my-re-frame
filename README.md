@@ -8,7 +8,7 @@ subs.cljs = the query layer. Write and register subscription functions
 views.cljs = Write Reagent component functions             
 events.cljs = write and register event handler functions    
 
-#Subscribing           
+# Subscribing           
 
 | cljs     | code     |
 | ------------- | ------------- |
@@ -19,7 +19,7 @@ events.cljs = write and register event handler functions
 Produces: ``Hello ab``  
            
                   
-#Dispatching
+# Dispatching
   
 | cljs | code |
 | ------------- | ------------- |
