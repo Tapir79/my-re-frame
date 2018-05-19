@@ -8,8 +8,8 @@
   (let [name (re-frame/subscribe [::subs/name])
         test (re-frame/subscribe [::subs/test])]
     [:div
-     [:p "Test " @test]
-     [:p "Hello from " @name]
+     [:p "Test value: " @test]
+     [:p "Name value: " @name]
      [:button {
                :on-click #(re-frame/dispatch [::events/name-change "Name changed!"])
                } "Change name"]
